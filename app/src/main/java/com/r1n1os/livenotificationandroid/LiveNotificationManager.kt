@@ -51,8 +51,8 @@ object LiveNotificationManager {
                 timeNeeded = 200,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("Request Placed")
-                    setContentText("Searching for available driver")
+                    setContentTitle("Route Accepted")
+                    setContentText("Driver is on the way to you")
                     setAutoCancel(true)
 
                     // Building ProgressStyle for step one
@@ -72,8 +72,8 @@ object LiveNotificationManager {
                 timeNeeded = 2000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("In route")
-                    setContentText("Driver is on the way")
+                    setContentTitle("Driver arrived")
+                    setContentText("Driver is waiting for you")
                     setAutoCancel(true)
 
                     // Building ProgressStyle for step two
@@ -93,8 +93,8 @@ object LiveNotificationManager {
                 timeNeeded = 5000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("Driver arrived")
-                    setContentText("Driver is waiting for you")
+                    setContentTitle("Arrived")
+                    setContentText("You have arrived at your destination")
                     setAutoCancel(true)
 
                     // Building ProgressStyle for step three
@@ -120,9 +120,10 @@ object LiveNotificationManager {
                 timeNeeded = 200,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("Request Placed")
-                    setContentText("Searching for available driver")
-                    setAutoCancel(true)
+                    setContentTitle("Route Accepted")
+                    setContentText("Driver is on the way to you")
+                    setOngoing(true)
+                    //setAutoCancel(true)
 
                     // Building ProgressStyle for step one
                     var progressStyle: Notification.ProgressStyle? =
@@ -142,8 +143,8 @@ object LiveNotificationManager {
                 timeNeeded = 2000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("In route")
-                    setContentText("Driver is on the way")
+                    setContentTitle("Driver arrived")
+                    setContentText("Driver is waiting for you")
                     setAutoCancel(true)
 
                     // Building ProgressStyle for step two
@@ -164,8 +165,8 @@ object LiveNotificationManager {
                 timeNeeded = 5000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
-                    setContentTitle("Driver arrived")
-                    setContentText("Driver is waiting for you")
+                    setContentTitle("Arrived")
+                    setContentText("You have arrived at your destination")
                     setAutoCancel(true)
 
                     // Building ProgressStyle for step three
@@ -236,7 +237,6 @@ object LiveNotificationManager {
                 )
                 if (isWithProgressPoints) {
                     progressPointList = handleProgressPoint(
-                        segmentOneColor,
                         segmentTwoColor,
                         segmentThreeColor
                     )
@@ -267,7 +267,6 @@ object LiveNotificationManager {
 
     @RequiresApi(Build.VERSION_CODES.BAKLAVA)
     private fun handleProgressPoint(
-        segmentOneColor: Int,
         segmentTwoColor: Int,
         segmentThreeColor: Int,
     ): List<Notification.ProgressStyle.Point> {
