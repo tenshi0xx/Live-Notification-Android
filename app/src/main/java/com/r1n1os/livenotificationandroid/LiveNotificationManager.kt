@@ -2,6 +2,7 @@ package com.r1n1os.livenotificationandroid
 
 import android.Manifest
 import android.app.Notification
+import android.app.Notification.Action
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.NotificationManager.IMPORTANCE_DEFAULT
@@ -69,7 +70,7 @@ object LiveNotificationManager {
                 }
             ),
             TrackingModel(
-                timeNeeded = 2000,
+                timeNeeded = 3000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
                     setContentTitle("Driver arrived")
@@ -122,8 +123,6 @@ object LiveNotificationManager {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
                     setContentTitle("Route Accepted")
                     setContentText("Driver is on the way to you")
-                    setOngoing(true)
-                    //setAutoCancel(true)
 
                     // Building ProgressStyle for step one
                     var progressStyle: Notification.ProgressStyle? =
@@ -140,7 +139,7 @@ object LiveNotificationManager {
                 }
             ),
             TrackingModel(
-                timeNeeded = 2000,
+                timeNeeded = 3000,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
                     setSmallIcon(R.drawable.ic_launcher_foreground)
                     setContentTitle("Driver arrived")
@@ -261,7 +260,6 @@ object LiveNotificationManager {
                 .setColor(segmentTwoColor),
             Notification.ProgressStyle.Segment(THIRD_SEGMENT)
                 .setColor(segmentThreeColor),
-
             )
     }
 
