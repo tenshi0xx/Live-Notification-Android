@@ -2,7 +2,6 @@ package com.r1n1os.livenotificationandroid
 
 import android.Manifest
 import android.app.Notification
-import android.app.Notification.Action
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.NotificationManager.IMPORTANCE_DEFAULT
@@ -21,11 +20,10 @@ import androidx.core.graphics.toColorInt
 object LiveNotificationManager {
     private lateinit var notificationManager: NotificationManager
     private lateinit var appContext: Context
-    const val CHANNEL_ID = "live_updates_channel_id"
 
+    const val CHANNEL_ID = "live_updates_channel_id"
     private const val CHANNEL_NAME = "live_updates_channel_name"
     private const val NOTIFICATION_ID = 1234
-
 
     private const val FIRST_SEGMENT = 50
     private const val SECOND_SEGMENT = 50
@@ -42,12 +40,15 @@ object LiveNotificationManager {
         val channel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, IMPORTANCE_DEFAULT)
         appContext = context
         this.notificationManager.createNotificationChannel(channel)
-        //setSteps()
     }
 
-
     fun showSegmentLiveNotification() {
-        trackingSteps = listOf<TrackingModel>(
+        trackingSteps = buildTrackingModelList()
+        showNotification()
+    }
+
+    private fun buildTrackingModelList(): List<TrackingModel> {
+        return  listOf<TrackingModel>(
             TrackingModel(
                 timeNeeded = 200,
                 builder = Notification.Builder(appContext, CHANNEL_ID).apply {
@@ -112,7 +113,6 @@ object LiveNotificationManager {
                 }
             ),
         )
-        showNotification()
     }
 
     fun showPointsLiveNotification() {
@@ -219,9 +219,7 @@ object LiveNotificationManager {
                     segmentTwoColor,
                     segmentThreeColor
                 )
-            var progressPointList: List<Notification.ProgressStyle.Point>? = null
 
-            // Creating the progress points style
             Notification.ProgressStyle().apply {
                 isStyledByProgress = false
                 progress = currentProgress
@@ -234,7 +232,9 @@ object LiveNotificationManager {
                     appContext,
                     R.drawable.location_pin
                 )
+                // Creating the progress points style
                 if (isWithProgressPoints) {
+                    var progressPointList: List<Notification.ProgressStyle.Point>? = null
                     progressPointList = handleProgressPoint(
                         segmentTwoColor,
                         segmentThreeColor
@@ -275,5 +275,4 @@ object LiveNotificationManager {
                 .setColor(segmentThreeColor)
         )
     }
-
 }
