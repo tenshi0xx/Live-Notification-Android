@@ -3,6 +3,14 @@
 
 <p><strong>Live Notification Android</strong> demonstrates the use of <strong>progress-centric notifications</strong> — a new feature introduced in <strong>Android 16 (API level 36)</strong> — to display live and dynamic updates directly in the notification shade.</p>
 
+<h1>🎬 Demo</h1>
+<p align="left">
+    <a title="live_notification_android_segment_style">
+      <img src="https://github.com/r1n1os/Live-Notification-Android/raw/main/screenshots/live_notification_android_segment_style.gif" height="530" width="250">
+    </a>
+ <a title="live_notification_android_segment_point_style"> <img src="https://github.com/r1n1os/Live-Notification-Android/raw/main/screenshots/live_notification_android_segment_point_style.gif" height="530" width="250">
+    </a>
+</p>
 
 <h2>🚀 Features</h2>
 <ul>
