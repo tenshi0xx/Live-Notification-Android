@@ -265,14 +265,14 @@ object LiveNotificationManager {
 
     @RequiresApi(Build.VERSION_CODES.BAKLAVA)
     private fun handleProgressPoint(
-        segmentTwoColor: Int,
-        segmentThreeColor: Int,
+        pointOneColor: Int,
+        pointTwoColor: Int,
     ): List<Notification.ProgressStyle.Point> {
         return listOf(
             Notification.ProgressStyle.Point(FIRST_POINT)
-                .setColor(segmentTwoColor),
+                .setColor(pointOneColor),
             Notification.ProgressStyle.Point(SECOND_POINT)
-                .setColor(segmentThreeColor)
+                .setColor(pointTwoColor)
         )
     }
 }
