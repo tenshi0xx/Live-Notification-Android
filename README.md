@@ -1,7 +1,7 @@
 <h1>📱 Live Notification Android</h1>
 <p><em>(Progress-Centric Notifications for Android 16)</em></p>
 
-<p><strong>Live Notification Android</strong> demonstrates the use of <strong>progress-centric notifications</strong> — a new feature introduced in <strong>Android 16 (API level 36)</strong> — to display live and dynamic updates directly in the notification shade.</p>
+<p><strong>Live Notification Android</strong> demonstrates the use of the <strong>progress-centric notifications</strong> — a new feature introduced in <strong>Android 16 (API level 36)</strong> — to display live and dynamic updates directly in the notification shade.</p>
 
 <h1>🎬 Demo</h1>
 <p align="left">
@@ -34,6 +34,12 @@ minSDK: 28
 gradle: 8.10.1
 kotlin: 2.1.21
 </code></pre>
+
+>[!NOTE]
+> Medium Article
+For a full walkthrough and explanation, check out the accompanying Medium article: <br>
+👉 <a href="https://r1n1os.medium.com/level-up-android-notifications-with-live-progress-centric-styles-android-16-605d34781ad1" target="_blank">Level Up Your Android Notifications with Progress-Centric (Live) Notifications in Android 16+</a></li>
+>
 
 
 <h2>📚 References</h2>
